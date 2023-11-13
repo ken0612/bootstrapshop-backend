@@ -1,0 +1,12 @@
+main/java/com/shop/service/ProductsService.class
+main/java/com/shop/model/UsersEntity.class
+main/java/com/shop/DAO/UsersDao.class
+main/java/com/shop/DAO/ProductsDao.class
+main/java/com/shop/config/ShopConfig.class
+main/java/com/shop/controller/UsersController.class
+main/java/com/shop/model/ProductsEntity.class
+main/java/com/shop/service/UsersService.class
+main/java/com/shop/repository/UsersRepository.class
+main/java/com/shop/controller/ProductsController.class
+main/java/com/shop/ShopSpringBootApp.class
+main/java/com/shop/repository/ProductsRepository.class

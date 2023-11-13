@@ -1,0 +1,15 @@
+server:
+  port: 8085
+
+spring:
+  datasource:
+    username: root
+    password: password
+    url: jdbc:mysql://172.17.0.2:3306/bootstrapshop
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+    #更新或創建數據表結構
+      ddl-auto: update
+    #控制台顯示sql
+    show-sql: true

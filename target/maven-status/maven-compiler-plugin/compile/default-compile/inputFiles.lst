@@ -1,0 +1,12 @@
+/Users/sunmenghsien/eclipse-workspace/BSShop/src/main/java/com/shop/config/ShopConfig.java
+/Users/sunmenghsien/eclipse-workspace/BSShop/src/main/java/com/shop/ShopSpringBootApp.java
+/Users/sunmenghsien/eclipse-workspace/BSShop/src/main/java/com/shop/repository/UsersRepository.java
+/Users/sunmenghsien/eclipse-workspace/BSShop/src/main/java/com/shop/DAO/UsersDao.java
+/Users/sunmenghsien/eclipse-workspace/BSShop/src/main/java/com/shop/controller/ProductsController.java
+/Users/sunmenghsien/eclipse-workspace/BSShop/src/main/java/com/shop/model/ProductsEntity.java
+/Users/sunmenghsien/eclipse-workspace/BSShop/src/main/java/com/shop/DAO/ProductsDao.java
+/Users/sunmenghsien/eclipse-workspace/BSShop/src/main/java/com/shop/service/ProductsService.java
+/Users/sunmenghsien/eclipse-workspace/BSShop/src/main/java/com/shop/repository/ProductsRepository.java
+/Users/sunmenghsien/eclipse-workspace/BSShop/src/main/java/com/shop/model/UsersEntity.java
+/Users/sunmenghsien/eclipse-workspace/BSShop/src/main/java/com/shop/service/UsersService.java
+/Users/sunmenghsien/eclipse-workspace/BSShop/src/main/java/com/shop/controller/UsersController.java
