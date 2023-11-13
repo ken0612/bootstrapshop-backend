@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,6 +13,7 @@ import main.java.com.shop.model.ProductsEntity;
 import main.java.com.shop.service.ProductsService;
 
 @Controller
+@CrossOrigin(origins="*")
 public class ProductsController {
 	
 	@Autowired
