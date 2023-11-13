@@ -11,6 +11,8 @@
 	</properties>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
+		
+	    <finalName>app</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
