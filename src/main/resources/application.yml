@@ -4,9 +4,8 @@ server:
 spring:
   datasource:
     username: root
-    password: password
-    url: jdbc:mysql://172.17.0.2:3306/bootstrapshop
-    driver-class-name: com.mysql.jdbc.Driver
+    password: gvCoJ1Lsw2KtZWCKUfJrNHPRKkzhywUL
+    url: jdbc:postgresql://dpg-cl8pt62vokcc73b2ai10-a:5432/bootstrapshop
   jpa:
     hibernate:
     #更新或創建數據表結構
