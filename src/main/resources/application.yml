@@ -5,7 +5,7 @@ spring:
   datasource:
     username: root
     password: gvCoJ1Lsw2KtZWCKUfJrNHPRKkzhywUL
-    url: jdbc:postgresql://dpg-cl8pt62vokcc73b2ai10-a:5432/bootstrapshop
+    url: jdbc:postgresql://dpg-cl8pt62vokcc73b2ai10-a.oregon-postgres.render.com/bootstrapshop
   jpa:
     hibernate:
     #更新或創建數據表結構
