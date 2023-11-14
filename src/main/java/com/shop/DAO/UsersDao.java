@@ -43,4 +43,10 @@ public class UsersDao {
 		return user;
 	}
 	
+	public int getUserId(Map<String,String> data) {
+		UsersEntity user= usersRepository.findByAccount(data.get("account"));
+		return user.getId();
+		
+	}
+	
 }

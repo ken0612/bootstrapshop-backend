@@ -1,5 +1,6 @@
 package main.java.com.shop.service;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -70,5 +71,30 @@ public class UsersService {
 		accountMap.put("account", account);
 		return usersDao.findByAccount(accountMap);
 	}
+	
+	public Map<String,String> updateUserInfo(Map<String,String> data) {
+		Map<String,String> result= new HashMap<>();
+		UsersEntity user= usersDao.findByAccount(data);
+		String date = data.get("birth");
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-mm-dd");
+		try {
+			java.util.Date parseDate = simpleDateFormat.parse(date);
+			java.sql.Date sqlDate= new java.sql.Date(parseDate.getTime());		
+			user.setAddress(data.get("address"));
+			user.setBirth(sqlDate);
+			user.setFullName(data.get("fullName"));
+			user.setPhoneNumber(Integer.parseInt(data.get("phoneNumber")));
+			System.out.println(user.getPhoneNumber());
+			usersDao.saveUser(user);
+			result.put("fullName", user.getFullName());
+			result.put("birth", simpleDateFormat.format(user.getBirth()));
+			result.put("phoneNumber",Integer.toString(user.getPhoneNumber()));
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+		return result;
+	}
+	
 	
 }

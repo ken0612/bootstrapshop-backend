@@ -61,4 +61,12 @@ public class UsersController {
 		System.out.println(account);
 		return usersService.getUserByAccount(account);
 	}
+	
+	
+	@PostMapping("/changeuserinfo")
+	public ResponseEntity<Map<String,String>> chagneUserInfo(@RequestBody Map<String,String> data) {
+		System.out.println("userinfochange has been called");
+		Map<String,String>  updatedUser=usersService.updateUserInfo(data);
+		return ResponseEntity.status(HttpStatus.OK).body(updatedUser);
+	}
 }
