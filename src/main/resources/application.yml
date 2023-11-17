@@ -8,7 +8,7 @@ spring:
     url: jdbc:postgresql://dpg-cl8pt62vokcc73b2ai10-a.oregon-postgres.render.com/bootstrapshop
   
   #datasource:
-   # username: root
+    #username: root
     #password: password
     #url: jdbc:mysql://localhost:3306/bootstrapshop
   
