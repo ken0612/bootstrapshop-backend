@@ -1,6 +1,8 @@
 package main.java.com.shop.service;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +33,14 @@ public class ProductsService {
     	Optional<ProductsEntity> target= productsDao.getProductsEntityById(id);
     	ProductsEntity productDetail= target.get();
     	return  productDetail;
+    }
+    
+    public ProductsEntity saveProduct(ProductsEntity product) {
+    	product.setCreateDate(new java.sql.Date(new Date().getTime()));
+    	return productsDao.addProduct(product);
+    }
+    
+    public List<ProductsEntity> deleteProductById(Map<String, Integer> data) {
+    	return productsDao.deleteProductById(data);
     }
 }

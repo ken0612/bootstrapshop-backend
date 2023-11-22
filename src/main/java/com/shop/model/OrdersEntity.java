@@ -33,10 +33,17 @@ public class OrdersEntity {
 	private int totalAmount;
 	private String payMethod;
 	private String deliveryMethod;
+	private Integer deliveryStatus;
 	
 	
 	
 	
+	public Integer getDeliveryStatus() {
+		return deliveryStatus;
+	}
+	public void setDeliveryStatus(Integer deliveryStatus) {
+		this.deliveryStatus = deliveryStatus;
+	}
 	public String getEmail() {
 		return email;
 	}

@@ -1,5 +1,7 @@
 package main.java.com.shop.DAO;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +21,13 @@ public class UsersDao {
 	
 	//取得所有用戶資訊，以list形式回傳
 	public List<UsersEntity> getAllUsers() {
-		List<UsersEntity> allUsers=  usersRepository.findAll();
+		List<UsersEntity> rawData=  usersRepository.findAll();
+		List<UsersEntity> allUsers = new ArrayList<UsersEntity>();
+		for(UsersEntity ele :rawData) {
+			ele.setPassword("");
+			allUsers.add(ele);
+		}
+		
 		return allUsers;
 	}
 	
@@ -46,7 +54,12 @@ public class UsersDao {
 	public int getUserId(Map<String,String> data) {
 		UsersEntity user= usersRepository.findByAccount(data.get("account"));
 		return user.getId();
-		
+	}
+
+	public void updateLastLoginDateByAccount(String account) {
+		UsersEntity user = usersRepository.findByAccount(account);
+		user.setLastLoginDate(new java.sql.Date(new Date().getTime()));
+		usersRepository.save(user);
 	}
 	
 }

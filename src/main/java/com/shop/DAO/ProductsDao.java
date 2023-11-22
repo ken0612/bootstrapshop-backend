@@ -2,6 +2,7 @@ package main.java.com.shop.DAO;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,5 +53,15 @@ public class ProductsDao {
 		return productsRepository.findById(id);
 	}
 	
+	public ProductsEntity addProduct(ProductsEntity product) {
+		
+		return productsRepository.save(product);
+		
+	}
+	
+	public List<ProductsEntity> deleteProductById(Map<String, Integer> data) {
+		productsRepository.deleteById(data.get("productId"));
+		return productsRepository.findAll();
+	}
 	
 }

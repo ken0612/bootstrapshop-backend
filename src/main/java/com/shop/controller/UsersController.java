@@ -1,5 +1,6 @@
 package main.java.com.shop.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,4 +70,20 @@ public class UsersController {
 		Map<String,String>  updatedUser=usersService.updateUserInfo(data);
 		return ResponseEntity.status(HttpStatus.OK).body(updatedUser);
 	}
+	
+	@ResponseBody
+	@PostMapping("/getAllUsersInfo")
+	public ResponseEntity<List<UsersEntity>> getAllUsersInfo(){
+		System.out.println("getAllusershasbenncalled");
+		return ResponseEntity.status(HttpStatus.OK).body(usersService.getAllUsers());
+	}
+	
+	
+	@ResponseBody
+	@PostMapping("/updateuserinfo")
+	public ResponseEntity<UsersEntity> updateUserInfo(@RequestBody UsersEntity user){
+		return ResponseEntity.status(HttpStatus.OK).body(usersService.updateUserInfo(user));
+	}
+	
+	
 }

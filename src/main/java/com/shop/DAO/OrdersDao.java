@@ -33,6 +33,7 @@ public class OrdersDao {
 		ordersEntity.setPayMethod(jsondeliveryInfo.getPayMethod());
 		ordersEntity.setDeliveryMethod(jsondeliveryInfo.getDeliveryMethod());
 		ordersEntity.setAddress(jsondeliveryInfo.getDeliAddress());
+		ordersEntity.setDeliveryStatus(jsondeliveryInfo.getDeliveryStatus());
 		ordersEntity.setPhoneNumber(Integer.parseInt(jsondeliveryInfo.getDeliPhoneNumber()));
 		ordersEntity.setEmail(jsondeliveryInfo.getDeliEmail());
 		System.out.println(jsondeliveryInfo.getDeliEmail());
@@ -63,5 +64,12 @@ public class OrdersDao {
 	public OrdersEntity getOrderDetailByOrderId(int orderId) {
 		return ordersRepository.getOrderDetailByOrderId(orderId);
 	}
+	
+	public List<OrdersEntity> getOrdersByDeliveryStatus(Integer status){
+		return ordersRepository.getOrdersEntityByDeliveryStatus(status);
+	}
 
+	public List<OrdersEntity> getAllOrders(){
+		return ordersRepository.findAll();
+	}
 }

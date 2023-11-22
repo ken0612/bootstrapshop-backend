@@ -11,4 +11,5 @@ import main.java.com.shop.model.OrdersEntity;
 public interface OrdersRepository extends JpaRepository<OrdersEntity,Integer> {
 	List<OrdersEntity> getOrdersEntityByCustomerId(int customerId);
 	OrdersEntity getOrderDetailByOrderId(int orderId);
+	List<OrdersEntity> getOrdersEntityByDeliveryStatus(Integer status);
 }

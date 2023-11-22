@@ -1,6 +1,7 @@
 package main.java.com.shop.service;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,6 +41,7 @@ public class UsersService {
 			usersEntity.setAccount(data.get("account"));
 			usersEntity.setPassword(data.get("password"));
 			usersEntity.setEmail(data.get("email"));
+			usersEntity.setRegistDate(new java.sql.Date(new Date().getTime()));
 			usersDao.saveUser(usersEntity);	
 		}
 		return status;
@@ -60,6 +62,7 @@ public class UsersService {
 		if(user != null) {
 			if(user.getPassword().equals(password)) {
 				result.put("isLogin",account);
+				usersDao.updateLastLoginDateByAccount(account);
 				return result;
 			}
 		}
@@ -94,6 +97,14 @@ public class UsersService {
 			System.out.println(e);
 		}
 		return result;
+	}
+	
+	public void updataLastLoginDateByAccount(String account) {
+		usersDao.updateLastLoginDateByAccount(account);
+	}
+
+	public UsersEntity updateUserInfo(UsersEntity user) {
+		return usersDao.saveUser(user);
 	}
 	
 	

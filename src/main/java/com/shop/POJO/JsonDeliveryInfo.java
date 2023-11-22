@@ -10,10 +10,18 @@ public class JsonDeliveryInfo {
 	private int totalAmount;
 	private String payMethod;
 	private String deliveryMethod;
+	private Integer deliveryStatus;
 	
 	
 	
 	
+	
+	public Integer getDeliveryStatus() {
+		return deliveryStatus;
+	}
+	public void setDeliveryStatus(Integer deliveryStatus) {
+		this.deliveryStatus = deliveryStatus;
+	}
 	public String getDeliEmail() {
 		return deliEmail;
 	}

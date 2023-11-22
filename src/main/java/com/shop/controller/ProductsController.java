@@ -1,11 +1,14 @@
 package main.java.com.shop.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -39,4 +42,18 @@ public class ProductsController {
 	public ProductsEntity getProductDetailById(@RequestParam("productid")int id) {
 		return productsService.getProductDetailById(id);
 	}
+	
+	@ResponseBody
+	@PostMapping("/addproductentity")
+	public ProductsEntity addProduct(@RequestBody ProductsEntity data ) {
+		return productsService.saveProduct(data);
+	}
+	
+	
+	@ResponseBody
+	@PostMapping("deleteproductbyid")
+	public List<ProductsEntity> deleteProductById(@RequestBody Map<String,Integer> data) {
+		return productsService.deleteProductById(data);
+	}
+	
 }

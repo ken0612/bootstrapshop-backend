@@ -1,6 +1,7 @@
 package main.java.com.shop.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,15 @@ public class OrdersService {
 	
 	public OrdersEntity  getOrderDetailByOrderId(int orderId) {
 		return ordersDao.getOrderDetailByOrderId(orderId);
+	}
+	
+	public List<OrdersEntity> getOrdersByStatus(Map<String,Integer> data){
+		Integer status =data.get("deliveryStatus");
+		if(status==9) {
+			return ordersDao.getAllOrders();
+		}
+		
+		return ordersDao.getOrdersByDeliveryStatus(status);
 	}
 	
 }

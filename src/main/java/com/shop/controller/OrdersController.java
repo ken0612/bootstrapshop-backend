@@ -59,4 +59,13 @@ public class OrdersController {
 		
 	}
 	
+	
+	@ResponseBody
+	@PostMapping("/getorders")
+	public ResponseEntity<List<OrdersEntity>> getOrdersByStatus(@RequestBody Map<String, Integer> data){
+		return ResponseEntity.status(HttpStatus.OK).body(ordersService.getOrdersByStatus(data));
+	}
+	
+	
+	
 }
