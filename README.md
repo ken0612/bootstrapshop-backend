@@ -1,2 +1,0 @@
-# bootstrapshop-backend
-backendforbootstrapshopDemo

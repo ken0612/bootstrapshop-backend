@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import main.java.com.shop.POJO.CartDetails;
+import main.java.com.shop.POJO.DailyTotalAmount;
 import main.java.com.shop.model.OrdersEntity;
 import main.java.com.shop.model.UsersEntity;
 import main.java.com.shop.service.OrdersService;
@@ -67,5 +68,10 @@ public class OrdersController {
 	}
 	
 	
+	@ResponseBody
+	@PostMapping("/getweeklysalesamount")
+	public ResponseEntity<List<DailyTotalAmount>> getWeeklyTotalAmount(){
+		return ResponseEntity.status(HttpStatus.OK).body(ordersService.getWeeklyOrders());
+	}
 	
 }

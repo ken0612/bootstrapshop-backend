@@ -6,6 +6,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,12 +25,14 @@ public class OrdersEntity {
 	@OneToMany(mappedBy = "order",cascade =CascadeType.ALL)
 	private List<OrderDetails> orderDetails;
 	
+	@Column(name="order_date")
 	private Date orderDate;
 	private int customerId;
 	private String customerName;
 	private int phoneNumber;
 	private String address;
 	private String email;
+	@Column(name="total_amount")
 	private int totalAmount;
 	private String payMethod;
 	private String deliveryMethod;

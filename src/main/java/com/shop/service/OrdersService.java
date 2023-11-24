@@ -1,5 +1,6 @@
 package main.java.com.shop.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import main.java.com.shop.DAO.OrdersDao;
 import main.java.com.shop.POJO.CartDetails;
+import main.java.com.shop.POJO.DailyTotalAmount;
 import main.java.com.shop.model.OrdersEntity;
 
 @Service
@@ -37,6 +39,16 @@ public class OrdersService {
 		}
 		
 		return ordersDao.getOrdersByDeliveryStatus(status);
+	}
+	
+	public List<DailyTotalAmount> getWeeklyOrders(){
+		LocalDate startDate=LocalDate.now();
+		LocalDate endDate=startDate.minusDays(7);
+		java.sql.Date sqlStartDate =java.sql.Date.valueOf(startDate);
+		java.sql.Date sqlEndDate=java.sql.Date.valueOf(endDate);
+		List<DailyTotalAmount> list= ordersDao.getWeeklySalesAmount(sqlEndDate,sqlStartDate);
+		
+		return list;
 	}
 	
 }

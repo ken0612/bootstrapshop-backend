@@ -3,11 +3,13 @@ package main.java.com.shop.DAO;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import main.java.com.shop.POJO.CartDetails;
+import main.java.com.shop.POJO.DailyTotalAmount;
 import main.java.com.shop.POJO.JsonCartItems;
 import main.java.com.shop.POJO.JsonDeliveryInfo;
 import main.java.com.shop.model.OrderDetails;
@@ -71,5 +73,10 @@ public class OrdersDao {
 
 	public List<OrdersEntity> getAllOrders(){
 		return ordersRepository.findAll();
+	}
+	
+	public List<DailyTotalAmount> getWeeklySalesAmount(java.sql.Date endDate,java.sql.Date startDate){
+		
+		return ordersRepository.getWeeklySalesAmount(endDate,startDate);
 	}
 }

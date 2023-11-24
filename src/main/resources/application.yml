@@ -9,8 +9,8 @@ spring:
    
   #datasource:
    # username: root
-   # password: password
-   # url: jdbc:mysql://localhost:3306/bootstrapshop
+    #password: password
+    #url: jdbc:mysql://localhost:3306/bootstrapshop
   
   
     

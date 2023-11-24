@@ -18,18 +18,19 @@ public class AdminService {
 	
 	public Map<String,String> adminLoginVali(AdminEntity admin){
 		Map<String,String> token = new HashMap<>();
+		token.put("isAdminLogin", "loginFailure");
+		
 		AdminEntity adminInfo= adminDao.findAdminByAccount(admin.getAccount());
 		
-		if(adminInfo==null){
-			token.put("isAdminLogin","loginFailure");
-			return token;
-		}
-		
-		if(adminInfo.getPassword().equals(admin.getPassword())) {
-			System.out.println("hahaworld");
-			token.put("isAdminLogin",adminInfo.getAccount());
+		if(adminInfo!=null){
+			if(adminInfo.getPassword().equals(admin.getPassword())) {
+				token.put("isAdminLogin",adminInfo.getAccount());
+				return token;
+			}
 		}
 		return token;
+		
+		
 	}
 	
 	
