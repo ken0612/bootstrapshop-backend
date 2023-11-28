@@ -24,9 +24,9 @@ public class ProductsController {
 	
 	
 	@ResponseBody
-	@GetMapping("/dammy")
+	@GetMapping("/dummy")
 	public List<ProductsEntity> generateRandomProducts(){
-		return productsService.generateDammyData();
+		return productsService.generateDummyData();
 	}
 	
 	

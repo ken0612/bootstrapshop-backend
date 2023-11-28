@@ -32,16 +32,16 @@ public class ProductsDao {
 		categoryList.add("winter");
 		java.sql.Date currentDate = new java.sql.Date(System.currentTimeMillis());
 		for(int i =0;i<=20;i++) {
-			ProductsEntity dammy = new ProductsEntity();
-			dammy.setCategory(categoryList.get((int)Math.floor(Math.random()*categoryList.size())));
-			dammy.setCreateDate(currentDate);
-			dammy.setProductDesc("this is dammy products desc haha!");
-			dammy.setProductImg("https://picsum.photos/300/200?random="+i);
-			dammy.setProductName("dammyProduct"+i);
-			dammy.setProductPrice(i*1000);
-			dammy.setProductStock(i*5);
-			dammy.setUpdateDate(currentDate);
-			productsRepository.save(dammy);
+			ProductsEntity dummy = new ProductsEntity();
+			dummy.setCategory(categoryList.get((int)Math.floor(Math.random()*categoryList.size())));
+			dummy.setCreateDate(currentDate);
+			dummy.setProductDesc("This is product description");
+			dummy.setProductImg("https://picsum.photos/300/200?random="+i);
+			dummy.setProductName("dummyProduct"+i);
+			dummy.setProductPrice(i+1*1000);
+			dummy.setProductStock(i*5);
+			dummy.setUpdateDate(currentDate);
+			productsRepository.save(dummy);
 		}
     }
 	

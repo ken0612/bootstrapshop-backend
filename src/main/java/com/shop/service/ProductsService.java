@@ -18,7 +18,7 @@ public class ProductsService {
     ProductsDao productsDao;
     
     //產生假資料
-    public List<ProductsEntity> generateDammyData() {
+    public List<ProductsEntity> generateDummyData() {
     	productsDao.generateRandomProducts();
     	return productsDao.getAllProducts();
     }
