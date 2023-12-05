@@ -18,16 +18,10 @@ public interface OrdersRepository extends JpaRepository<OrdersEntity,Integer> {
 	
 	
 	
-	@Query("SELECT \n"
-			+ "new main.java.com.shop.POJO.DailyTotalAmount(   DATE(orderDate) AS orderDay,\n"
-			+ "    SUM(totalAmount) AS dailySalesTotal)\n"
-			+ "FROM\n"
-			+ "    OrdersEntity \n"
-			+ "WHERE\n"
-			+ "    orderDate BETWEEN :endDate AND :startDate \n"
-			+ "GROUP BY\n"
-			+ "    orderDay\n"
-			+ "ORDER BY\n"
-			+ "    orderDay")
-	List<DailyTotalAmount> getWeeklySalesAmount(@Param("endDate") java.sql.Date endDate,@Param("startDate") java.sql.Date startDate);
+	@Query(value = "SELECT DATE(order_date) AS orderDay, SUM(total_amount) AS dailySalesTotal " +
+	        "FROM orders_entity " +
+	        "WHERE order_date BETWEEN :endDate AND :startDate " +
+	        "GROUP BY orderDay " +
+	        "ORDER BY orderDay", nativeQuery = true)
+	List<Object[]> getWeeklySalesAmount(@Param("endDate") java.sql.Date endDate, @Param("startDate") java.sql.Date startDate);
 }

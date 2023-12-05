@@ -75,7 +75,7 @@ public class OrdersDao {
 		return ordersRepository.findAll();
 	}
 	
-	public List<DailyTotalAmount> getWeeklySalesAmount(java.sql.Date endDate,java.sql.Date startDate){
+	public List<Object[]> getWeeklySalesAmount(java.sql.Date endDate,java.sql.Date startDate){
 		
 		return ordersRepository.getWeeklySalesAmount(endDate,startDate);
 	}

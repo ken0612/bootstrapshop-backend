@@ -1,12 +1,15 @@
 package main.java.com.shop.service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ch.qos.logback.core.joran.spi.ElementPath;
 import main.java.com.shop.DAO.OrdersDao;
 import main.java.com.shop.POJO.CartDetails;
 import main.java.com.shop.POJO.DailyTotalAmount;
@@ -46,9 +49,16 @@ public class OrdersService {
 		LocalDate endDate=startDate.minusDays(7);
 		java.sql.Date sqlStartDate =java.sql.Date.valueOf(startDate);
 		java.sql.Date sqlEndDate=java.sql.Date.valueOf(endDate);
-		List<DailyTotalAmount> list= ordersDao.getWeeklySalesAmount(sqlEndDate,sqlStartDate);
-		
-		return list;
+		List<Object[]> list= ordersDao.getWeeklySalesAmount(sqlEndDate,sqlStartDate);
+		List<DailyTotalAmount> result = new ArrayList<DailyTotalAmount>();
+		for(Object[] ele :list) {
+			DailyTotalAmount temp = new DailyTotalAmount();
+			temp.setOrderDay((java.sql.Date)ele[0]);
+			BigDecimal amount=(BigDecimal)ele[1];
+			temp.setDailySalesTotal(amount.longValue());
+			result.add(temp);
+		}
+		return result;
 	}
 	
 }
