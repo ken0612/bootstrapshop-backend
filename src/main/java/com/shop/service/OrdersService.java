@@ -54,8 +54,7 @@ public class OrdersService {
 		for(Object[] ele :list) {
 			DailyTotalAmount temp = new DailyTotalAmount();
 			temp.setOrderDay((java.sql.Date)ele[0]);
-			BigDecimal amount=(BigDecimal)ele[1];
-			temp.setDailySalesTotal(amount.longValue());
+			temp.setDailySalesTotal((Long)ele[1]);
 			result.add(temp);
 		}
 		return result;
