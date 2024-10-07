@@ -5,7 +5,7 @@ spring:
   datasource:
     username: b0612ken_user
     password: zAbg57utxQe1f5NbDWye1hQvRaW0RCep
-    url: jdbc:postgresql://dpg-cs1kee88fa8c73d15ac0-a.oregon-postgres.render.com/bootstrapshop
+    url: jdbc:postgresql://b0612ken_user:zAbg57utxQe1f5NbDWye1hQvRaW0RCep@dpg-cs1kee88fa8c73d15ac0-a/b0612ken
    
   #datasource:
    #username: root
