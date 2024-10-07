@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    username: root
-    password: gvCoJ1Lsw2KtZWCKUfJrNHPRKkzhywUL
-    url: jdbc:postgresql://dpg-cl8pt62vokcc73b2ai10-a.oregon-postgres.render.com/bootstrapshop
+    username: b0612ken_user
+    password: zAbg57utxQe1f5NbDWye1hQvRaW0RCep
+    url: jdbc:postgresql://dpg-cs1kee88fa8c73d15ac0-a.oregon-postgres.render.com/bootstrapshop
    
   #datasource:
    #username: root
