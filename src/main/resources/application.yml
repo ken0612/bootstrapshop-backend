@@ -6,6 +6,14 @@ spring:
     username: root
     password: nQek0lJVDNe1pdCundVVf1cqFfDpzmpJ
     url: jdbc:postgresql://root:nQek0lJVDNe1pdCundVVf1cqFfDpzmpJ@dpg-cs1kmp88fa8c73d16ke0-a.oregon-postgres.render.com/bootstrapshop_7y3t
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # 更新或創建數據表結構
+    show-sql: true      # 控制台顯示 SQL
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
    
   #datasource:
    #username: root
@@ -14,11 +22,4 @@ spring:
   
   
     
-    
-  jpa:
-    hibernate:
-      ddl-auto: update  # 更新或創建數據表結構
-    show-sql: true      # 控制台顯示 SQL
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+
