@@ -17,7 +17,8 @@ spring:
     
   jpa:
     hibernate:
-    #更新或創建數據表結構
-      ddl-auto: update
-    #控制台顯示sql
-    show-sql: true
+      ddl-auto: update  # 更新或創建數據表結構
+    show-sql: true      # 控制台顯示 SQL
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
