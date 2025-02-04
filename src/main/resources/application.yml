@@ -5,8 +5,8 @@ spring:
   datasource:
     username: demosql_yj85_user
     password: xvhWaH5JU6J13VKNQxnydssLq2Ujjx12
-    url: jdbc:postgresql://dpg-cugnb6bv2p9s73cl75og-a.oregon-postgres.render.com/demosql_yj85
-
+    url: jdbc:postgresql://demosql_yj85_user:xvhWaH5JU6J13VKNQxnydssLq2Ujjx12@dpg-cugnb6bv2p9s73cl75og-a/demosql_yj85
+    
   jpa:
     hibernate:
       ddl-auto: update  # 更新或創建數據表結構
